@@ -81,7 +81,7 @@
 
 			</div>
 			<div class="swiper-pagination slider-cover__pagination"></div>
-	
+	<br>
 		<div class="page__title-bar">
 			<h3>Most popular</h3>
 		</div>		
@@ -97,24 +97,8 @@
 					  <img src="<?php echo base_url('assets')?>/images/photos/image-27.jpg" alt="" title=""/>
 				  </div>
 				  <h4 class="card__title">Having fun with Rex</h4>
-				  <div class="d-flex align-center mb-10">
-					  <div class="card__likes">12k</div>
-					  <div class="card__comments ml-20 open-popup" data-popup="comments">57</div>
-				  </div>
+				
 			  </div>
-		
-		
-	      <div class="buttons buttons--centered mb-20">
-			<div id="loadMore" class="button button--more">View more</div>
-			<div id="showLess" class="button button--disabled">No more new posts</div> 
-	      </div>	  
-			  
-			  
-	
-			  
-
-
-
 </div>
 </div>
 </div>

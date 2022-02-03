@@ -39,7 +39,7 @@
 							<input type="password" name="password" value="" class="login-form__input required" />
 						</div>
 						<div class="login-form__row">
-							<input type="submit" name="submit" class="login-form__submit button button--main button--full" id="submit" value="SIGN UP" />
+							<input type="submit" name="submit" class="login-form__submit button button--main button--full" id="submit" value="DAFTAR" />
 						</div>
 					</form>	
 				</div>
@@ -50,10 +50,15 @@
 
 </div>
 <!-- PAGE END -->
-   
-<script src="../../vendor/jquery/jquery-3.5.1.min.js"></script>
-<script src="../../vendor/jquery/jquery.validate.min.js" ></script>
-<script src="../../vendor/swiper/swiper.min.js"></script>
-<script src="js/jquery.custom.js"></script>
+
+<script src="<?php echo base_url('assets')?>/vendor/jquery/jquery-3.5.1.min.js"></script>
+<script src="<?php echo base_url('assets')?>/vendor/jquery/jquery.validate.min.js" ></script>
+<script src="<?php echo base_url('assets')?>/vendor/swiper/swiper.min.js"></script>
+<script src="<?php echo base_url('assets')?>/vendor/plyr/plyr.min.js"></script>
+<script src="<?php echo base_url('assets')?>/vendor/plyr/html5media.min.js"></script>
+<script src="<?php echo base_url('assets')?>/js/swiper-init.js"></script>
+<script src="<?php echo base_url('assets')?>/js/jquery.custom.js"></script>
+
 </body>
 </html>
+
