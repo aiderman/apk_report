@@ -3,42 +3,47 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class C_master extends CI_Controller
 {
-	public function index()
+	public function login()
 	{
 		$this->load->view("header");
 		$this->load->view("login");
 		$this->load->view("footer");
 	}
-	public function main()
+	public function index()
 	{
 		$this->load->view("header");
 		$this->load->view("navbar");
 		$this->load->view("main");
 		$this->load->view("footer");
 	}
-	public function daftar()
-	{
-		$this->load->view("header");
 
-		$this->load->view("daftar");
-		$this->load->view("footer");
-	}
-	public function folio()
+	public function add_news()
 	{
 		$this->load->view("header");
-		$this->load->view("V_folio");
+		$this->load->view("navbar");
+		$this->load->view("add_news");
 		$this->load->view("footer");
 	}
-	public function home()
+	public function galery()
 	{
 		$this->load->view("header");
-		$this->load->view("V_home");
+		$this->load->view("navbar");
+		$this->load->view("slider-top");
 		$this->load->view("footer");
 	}
-	public function blog()
+	public function faq()
 	{
 		$this->load->view("header");
-		$this->load->view("V_blog");
+		$this->load->view("navbar");
+		$this->load->view("faq");
+		$this->load->view("footer");
+	}
+
+	public function tracking()
+	{
+		$this->load->view("header");
+		$this->load->view("navbar");
+		$this->load->view("tracking");
 		$this->load->view("footer");
 	}
 

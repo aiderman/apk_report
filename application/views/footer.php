@@ -1,14 +1,15 @@
-<div class="footer">
+<div class="footer" style="background-color: #DA0037; color:#EDEDED">
 
 <div class="col-sm-12">
               
             </div>
 
-
+</br>
     <center><p class="copyright">COPYRIGHT 2022 CLEVERLABS</p>
     </center>
 </div>
-
+</div>
+</div>
 <!-- PAGE END -->
    
 <script src="<?php echo base_url('assets')?>/vendor/jquery/jquery-3.5.1.min.js"></script>
