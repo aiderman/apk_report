@@ -1,14 +1,12 @@
-</div>
-</div>
+
+
 
 <div class="bottom-navigation bottom-navigation--gradient">
 	<ul class="bottom-navigation__icons">
-	<li><a href="#"><img src="<?php echo base_url('assets')?>/images/icons/black/logout.svg" alt="" title="" /></a></li>
-	<li><a href="#"><img src="<?php echo base_url('assets')?>/images/icons/black/blocks.svg" alt="" title="" /></a></li>
-	<li><a href="#"><img src="<?php echo base_url('assets')?>/images/icons/black/user.svg" alt="" title="" /></a></li>
+	<li><a href="<?php echo base_url('C_master/logout')?>"><img src="<?php echo base_url('assets')?>/images/icons/black/logout.svg" alt="" title="" /></a></li>
+	<li class="centered"><a href="<?php echo base_url('C_master/add_news')?>"><img src="<?php echo base_url('assets')?>/images/icons/white/plus-bold.svg" alt="" title="" /></a></li>
+	<!-- <li><a href="<?php echo base_url('C_master/')?>"><img src="<?php echo base_url('assets')?>/images/icons/black/user.svg" alt="" title="" /></a></li> -->
 	<li><a href="#" class="open-popup" data-popup="notifications"><img src="<?php echo base_url('assets')?>/images/icons/black/notifications.svg" alt="" title="" /><i>2</i></a></li>
-	
-	<li class="centered"><a href="forms.html"><img src="<?php echo base_url('assets')?>/images/icons/white/plus-bold.svg" alt="" title="" /></a></li>
 	</ul>
 </div>	  
 <!-- PAGE END -->
