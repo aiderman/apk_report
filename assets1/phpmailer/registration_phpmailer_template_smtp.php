@@ -22,87 +22,90 @@
     <!-- BASE CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-	<link href="../css/vendors.css" rel="stylesheet">
+    <link href="../css/vendors.css" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
     <link href="../css/custom.css" rel="stylesheet">
-    
-	<script type="text/javascript">
-    function delayedRedirect(){
-        window.location = "../registration-wizard-version.html"
-    }
+
+    <script type="text/javascript">
+        function delayedRedirect() {
+            window.location = "../registration-wizard-version.html"
+        }
     </script>
 
 </head>
+
 <body onLoad="setTimeout('delayedRedirect()', 8000)" style="background-color:#fff;">
-<?php
+    <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
 
-require 'src/Exception.php';
-require 'src/PHPMailer.php';
-require 'src/SMTP.php';
+    require 'src/Exception.php';
+    require 'src/PHPMailer.php';
+    require 'src/SMTP.php';
 
-$mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
-try {
+    try {
 
-    //Server settings
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtpserver';                           // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'username';                             // SMTP username
-    $mail->Password   = 'password';                             // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        //Server settings
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host       = 'smtpserver';                           // Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+        $mail->Username   = 'username';                             // SMTP username
+        $mail->Password   = 'password';                             // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-    //Recipients - main edits
-    $mail->setFrom('info@wilio.com', 'Message from Wilio');                    // Email Address and Name FROM
-    $mail->addAddress('jhon@wilio.com', 'Jhon Doe');                           // Email Address and Name TO - Name is optional
-    $mail->addReplyTo('noreply@wilio.com', 'Message from Wilio');              // Email Address and Name NOREPLY
-    $mail->isHTML(true);                                                       
-    $mail->Subject = 'Message from Wilio';                                     // Email Subject
+        //Recipients - main edits
+        $mail->setFrom('info@wilio.com', 'Message from Wilio');                    // Email Address and Name FROM
+        $mail->addAddress('jhon@wilio.com', 'Jhon Doe');                           // Email Address and Name TO - Name is optional
+        $mail->addReplyTo('noreply@wilio.com', 'Message from Wilio');              // Email Address and Name NOREPLY
+        $mail->isHTML(true);
+        $mail->Subject = 'Message from Wilio';                                     // Email Subject
 
-    //The email body message
-    $message = "<strong>User Info</strong><br />";
-    $message .= "First name: " . $_POST['first_name'] . "<br />";
-    $message .= "Last name: " . $_POST['last_name'] . "<br />";
-    $message .= "Email: " . $_POST['email'] . "<br />";
-    $message .= "Country: " . $_POST['country'] . "<br />";
-    $message .= "Terms and conditions accepted: " . $_POST['terms'] . "<br />";
-    
-    $message .= "<br /><strong>Account Details</strong><br />";
-    $message .= "User Name: " . $_POST['user_name'] . "<br />";
-    $message .= "Password: " . $_POST['password2'];
+        //The email body message
+        $message = "<strong>User Info</strong><br />";
+        $message .= "First name: " . $_POST['first_name'] . "<br />";
+        $message .= "First name: " . $_POST['first_name1'] . "<br />";
+        $message .= "Last name: " . $_POST['last_name'] . "<br />";
+        $message .= "Email: " . $_POST['email'] . "<br />";
+        $message .= "Country: " . $_POST['country'] . "<br />";
+        $message .= "Country1: " . $_POST['country1'] . "<br />";
+        $message .= "Terms and conditions accepted: " . $_POST['terms'] . "<br />";
 
-	// Get the email's html content
-    $email_html = file_get_contents('template-email.html');
+        $message .= "<br /><strong>Account Details</strong><br />";
+        $message .= "User Name: " . $_POST['user_name'] . "<br />";
+        $message .= "Password: " . $_POST['password2'];
 
-    // Setup html content
-    $body = str_replace(array('message'),array($message),$email_html);
-    $mail->MsgHTML($body);
+        // Get the email's html content
+        $email_html = file_get_contents('template-email.html');
 
-    $mail->send();
+        // Setup html content
+        $body = str_replace(array('message'), array($message), $email_html);
+        $mail->MsgHTML($body);
 
-    // Confirmation/autoreplay email send to who fill the form
-    $mail->ClearAddresses();
-    $mail->isSMTP();
-    $mail->addAddress($_POST['email']); // Email address entered on form
-    $mail->isHTML(true);
-    $mail->Subject    = 'Confirmation'; // Custom subject
-    
-    // Get the email's html content
-    $email_html_confirm = file_get_contents('confirmation.html');
+        $mail->send();
 
-    // Setup html content
-    $body = str_replace(array('message'),array($message),$email_html_confirm);
-    $mail->MsgHTML($body);
+        // Confirmation/autoreplay email send to who fill the form
+        $mail->ClearAddresses();
+        $mail->isSMTP();
+        $mail->addAddress($_POST['email']); // Email address entered on form
+        $mail->isHTML(true);
+        $mail->Subject    = 'Confirmation'; // Custom subject
 
-    $mail->Send();
+        // Get the email's html content
+        $email_html_confirm = file_get_contents('confirmation.html');
 
-    echo '<div id="success">
+        // Setup html content
+        $body = str_replace(array('message'), array($message), $email_html_confirm);
+        $mail->MsgHTML($body);
+
+        $mail->Send();
+
+        echo '<div id="success">
             <div class="icon icon--order-success svg">
                  <svg xmlns="http://www.w3.org/2000/svg" width="72px" height="72px">
                   <g fill="none" stroke="#8EC343" stroke-width="2">
@@ -114,13 +117,14 @@ try {
             <h4><span>Request successfully sent!</span>Thank you for your time</h4>
             <small>You will be redirect back in 5 seconds.</small>
         </div>';
-	} catch (Exception $e) {
-	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-	}
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
 
-	
-?>
-<!-- END SEND MAIL SCRIPT -->   
+
+    ?>
+    <!-- END SEND MAIL SCRIPT -->
 
 </body>
+
 </html>

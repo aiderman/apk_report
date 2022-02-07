@@ -46,6 +46,7 @@
     $message .= "\nLast name: " . $_POST['last_name'];
     $message .= "\nEmail: " . $_POST['email'];
     $message .= "\nCountry: " . $_POST['country'];
+    $message .= "\nCountry: " . $_POST['country1'];
     $message .= "\nTerms and conditions accepted: " . $_POST['terms'] . "\n";
 
     $message .= "\nACCOUNT DETAILS";

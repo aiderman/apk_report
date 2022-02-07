@@ -44,15 +44,15 @@
 				select: {
 					required: true
 				},
-				 password1: {
-                	required: true,
-                    minlength : 5
-                },
-                password2: {
-                	required: true,
-                    minlength : 5,
-                    equalTo : "#password1"
-                }
+				password1: {
+					required: true,
+					minlength: 5
+				},
+				password2: {
+					required: true,
+					minlength: 5,
+					equalTo: "#password1"
+				}
 			},
 			errorPlacement: function (error, element) {
 				if (element.is('select:hidden')) {
@@ -73,6 +73,11 @@
 				var value = $(formControl).val();
 				$("#first_name").text(value);
 				break;
+			case 'first_name1':
+				// Get the value for a input text
+				var value = $(formControl).val();
+				$("#first_name1").text(value);
+				break;
 
 			case 'last_name':
 				// Get the value for a input text
@@ -86,10 +91,15 @@
 				$("#email").text(value);
 				break;
 
-			 case 'country':
+			case 'country':
 				// Get the value for a select
 				var value = $(formControl).val();
 				$("#country").text(value);
+				break;
+			case 'country1':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#country1").text(value);
 				break;
 
 			case 'user_name':
