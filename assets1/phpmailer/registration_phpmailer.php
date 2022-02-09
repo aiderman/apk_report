@@ -58,11 +58,11 @@
         //The email body message
         $message = "<strong>User Info</strong><br />";
         $message .= "First name: " . $_POST['first_name'] . "<br />";
-        $message .= "First name: " . $_POST['first_name1'] . "<br />";
+        $message .= "Judul aduan: " . $_POST['judul_aduan'] . "<br />";
         $message .= "Last name: " . $_POST['last_name'] . "<br />";
         $message .= "Email: " . $_POST['email'] . "<br />";
-        $message .= "Country: " . $_POST['country'] . "<br />";
-        $message .= "Country1: " . $_POST['country1'] . "<br />";
+        $message .= "kategori: " . $_POST['kategori'] . "<br />";
+        $message .= "kategori1: " . $_POST['kategori1'] . "<br />";
         $message .= "Terms and conditions accepted: " . $_POST['terms'] . "<br />";
 
         $message .= "<br /><strong>Account Details</strong><br />";

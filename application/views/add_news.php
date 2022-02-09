@@ -29,7 +29,7 @@
 
 	<script type="text/javascript">
 		function delayedRedirect() {
-			window.location = "<?php echo base_url('c_master/add_news1') ?>"
+			window.location = "<?php echo base_url('C_master/add_news1') ?>"
 		}
 	</script>
 

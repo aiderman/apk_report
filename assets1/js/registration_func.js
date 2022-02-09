@@ -73,11 +73,6 @@
 				var value = $(formControl).val();
 				$("#first_name").text(value);
 				break;
-			case 'first_name1':
-				// Get the value for a input text
-				var value = $(formControl).val();
-				$("#first_name1").text(value);
-				break;
 
 			case 'last_name':
 				// Get the value for a input text
@@ -90,16 +85,16 @@
 				var value = $(formControl).val();
 				$("#email").text(value);
 				break;
+			case 'demo':
+				// Get the value for a input text
+				var value = $(formControl).val();
+				$("#demo").text(value);
+				break;
 
 			case 'country':
 				// Get the value for a select
 				var value = $(formControl).val();
 				$("#country").text(value);
-				break;
-			case 'country1':
-				// Get the value for a select
-				var value = $(formControl).val();
-				$("#country1").text(value);
 				break;
 
 			case 'user_name':
@@ -113,5 +108,33 @@
 				var value = $(formControl).val();
 				$("#password").text(value);
 				break;
+
+			case 'kategori':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#kategori").text(value);
+				break;
+			case 'kategori1':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#kategori1").text(value);
+				break;
+			case 'sub_kategori':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#sub_kategori").text(value);
+				break;
+
+			case 'judul_aduan':
+				// Get the value for a input text
+				var value = $(formControl).val();
+				$("#judul_aduan").text(value);
+				break;
+			case 'isi_aduan':
+				// Get the value for a input text
+				var value = $(formControl).val();
+				$("#isi_aduan").text(value);
+				break;
+
 		}
 	}
