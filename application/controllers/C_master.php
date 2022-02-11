@@ -12,11 +12,10 @@ class C_master extends CI_Controller
 	}
 	public function login()
 	{
-		$this->load->view("header");
-		$this->load->view("login");
+	
 	}
 	public function logout()
-	{
+	{		
 		$this->load->view("header");
 		$this->load->view("login");
 	}
@@ -24,6 +23,7 @@ class C_master extends CI_Controller
 	{
 		$this->load->view("header");
 		$this->load->view("daftar");
+		
 	}
 	public function profile()
 	{

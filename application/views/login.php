@@ -32,7 +32,7 @@
 				
 					<div class="login-form__bottom">
 						<p>belum buat akun?</p>
-						<a href="<?php echo base_url('c_master/daftar')?>" class="button button--secondary button--full">DAFTAR</a>
+						<a href="<?php echo base_url('C_regist/')?>" class="button button--secondary button--full">DAFTAR</a>
 					</div>
 				</div>
 		</div>
