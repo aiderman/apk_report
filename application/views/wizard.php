@@ -185,9 +185,6 @@
 				</div>
 				<!-- /bottom-wizard -->
 			</form>
-			
-
-			
 		</div>
 		<!-- /Wizard container -->
 	</div>
@@ -207,7 +204,7 @@
 	</div>
 	<!-- /cd-overlay-content -->
 
-	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+	<a href="<?= base_url('c_login/')?>" class="cd-nav-trigger close-nav">Menu<span class="cd-icon"></span></a>
 	<!-- /menu button -->
 
 	<!-- Modal terms -->
@@ -231,22 +228,6 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<!-- COMMON SCRIPTS -->
 	<script src="<?= base_url('assets1/') ?>js/jquery-3.5.1.min.js"></script>
