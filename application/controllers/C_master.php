@@ -10,10 +10,6 @@ class C_master extends CI_Controller
 		$this->load->view("index");
 		$this->load->view("footer");
 	}
-	public function login()
-	{
-	
-	}
 	public function logout()
 	{		
 		$this->load->view("header");
@@ -34,27 +30,14 @@ class C_master extends CI_Controller
 	}
 
 
-	public function add_news()
-	{
-		// $this->load->view("header");
-		// $this->load->view("navbar");
-		$this->load->view("add_news");
-		// $this->load->view("a/registration-wizard-version");
-		// $this->load->view("footer");
-	}
-	public function add_news1()
-	{
-		// $this->load->view("header");
-		// $this->load->view("navbar");
-		$this->load->view("a/registration-wizard-version");
-		// $this->load->view("a/registration-wizard-version");
-		// $this->load->view("footer");
-	}
+
+	
 	public function galery()
 	{
 		$this->load->view("header");
 		$this->load->view("navbar");
-		$this->load->view("slider-top");
+		$this->load->view("galery");
+
 		$this->load->view("footer");
 	}
 	public function faq()

@@ -56,17 +56,11 @@
         $mail->Subject = 'Message from Wilio';                                     // Email Subject
 
         //The email body message
-        $message = "<strong>User Info</strong><br />";
-        $message .= "First name: " . $_POST['first_name'] . "<br />";
-        $message .= "Judul aduan: " . $_POST['judul_aduan'] . "<br />";
-        $message .= "Last name: " . $_POST['last_name'] . "<br />";
-        $message .= "Email: " . $_POST['email'] . "<br />";
-        $message .= "kategori: " . $_POST['kategori'] . "<br />";
-        $message .= "kategori1: " . $_POST['kategori1'] . "<br />";
+     
         $message .= "Terms and conditions accepted: " . $_POST['terms'] . "<br />";
 
         $message .= "<br /><strong>Account Details</strong><br />";
-        $message .= "User Name: " . $_POST['user_name'] . "<br />";
+        $message .= "User Name: " . $_POST['username'] . "<br />";
         $message .= "Password: " . $_POST['password2'];
 
         $mail->Body = "" . $message . "";

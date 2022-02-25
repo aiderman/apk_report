@@ -31,10 +31,7 @@
 	<!-- MODERNIZR MENU -->
 	<script src="<?= base_url('assets1/') ?>js/modernizr.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 </head>
-
 <style>
 	.form-input img {
 		width: 100%;
@@ -43,50 +40,6 @@
 		margin-bottom: 30px;
 	}
 </style>
-<script>
-	var map = L.map('map').setView([51.505, -0.09], 13);
-
-	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
-
-	L.marker([51.5, -0.09]).addTo(map)
-		.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-		.openPopup();
-</script>
-<script type="text/javascript">
-	function showLocation(position) {
-		var latitude = position.coords.latitude;
-		var longitude = position.coords.longitude;
-		alert("Latitude : " + latitude + " Longitude: " + longitude);
-		document.getElementById("lat").value = latitude;
-		document.getElementById("long").value = longitude;
-	}
-
-	function errorHandler(err) {
-		if (err.code == 1) {
-			alert("Error: Access is denied!");
-		} else if (err.code == 2) {
-			alert("Error: Position is unavailable!");
-		}
-	}
-
-	function getLocation() {
-
-		if (navigator.geolocation) {
-
-			// timeout at 60000 milliseconds (60 seconds)
-			var options = {
-				enableHighAccuracy: true,
-				timeout: 6000,
-				maximumAge: 0
-			};
-			navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
-		} else {
-			alert("Sorry, browser does not support geolocation!");
-		}
-	}
-</script>
 
 </head>
 
@@ -94,19 +47,16 @@
 	<!-- /menu -->
 	<div class="col-lg-6 content-right" id="start" style="margin-top:-100px;">
 		<div id="wizard_container">
+			<div id="top-wizard">
+				<div id="progressbar"></div>
+			</div>
 			<!-- /top-wizard -->
-			<form id="wrapped" method="POST" target="<?php echo base_url('c_regist/cek_data'); ?>">
-				<input id="website" name="website" type="text">
+			<form id="wrapped" method="POST">
+				<input id="website" name="website" type="text" value="">
 				<!-- wizard data diri start -->
 				<div id="middle-wizard">
 					<div class="step">
 						<h3 class="main_question"><strong>1/3</strong>Lengkapi data diri</h3>
-						<div class="form-group">
-							<input type="text" name="nama_lengkap" class="form-control required" placeholder="Nama Lengkap" onchange="getVals(this, 'nama_lengkap');">
-						</div>
-						<div class="form-group">
-							<input type="date" placeholder="Tanggal Lahir" name="tanggal_lahir" class="form-control required" onchange="getVals(this, 'tanggal_lahir');">
-						</div>
 						<div class="form-group">
 							<div class="styled-select clearfix">
 								<select class="wide required" name="kecamatan" onchange="getVals(this, 'kecamatan');">
@@ -116,28 +66,12 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="text" name="desa" class="form-control required" placeholder="Nama Lengkap" onchange="getVals(this, 'rtrw1');">
-						</div>
-
-
-						<div class="form-group">
 							<div class="styled-select clearfix">
 								<select class="wide required" name="kelurahan" onchange="getVals(this, 'kelurahan');">
 									<option selected disabled>pilih kelurahan</option>
-									<option value="kelurahan_1">kelurahan 1</option>
+									<option value="kelurahan_1">kelurahan 1 ss</option>
 								</select>
 							</div>
-						</div>
-
-						<div class="form-group">
-							<div id="map"></div>
-
-							<p>longitude :
-								<input type="hiden" class="form-control required" name="lat" id="lat" />
-							<p>latitude :
-								<input type="hiden" class="form-control required" name="long" id="long" />
-							</p>
-							<input style="background-color: darkseagreen;" type="button" class="form-control" onclick="getLocation();" value="pindai lokasi" />
 						</div>
 					</div>
 					<!-- wizard data diri start end-->
@@ -145,15 +79,11 @@
 						<h3 class="main_question"><strong>2/3</strong>daftarkan akun</h3>
 
 						<div class="form-group">
-							<input type="email" name="email" class="form-control required" placeholder="Email" onchange="getVals(this, 'email');">
+							<input type="text" name="judul_aduan" class="form-control required" placeholder="judul_aduan" onchange="getVals(this, 'judul_aduan');">
 						</div>
 						<div class="form-group">
-							<input class="form-control" type="password" id="password1" name="password1" placeholder="Password" onchange="getVals(this, 'password');">
+							<input type="text" name="isi_aduan" class="form-control required" placeholder="isi_aduan" onchange="getVals(this, 'isi_aduan');">
 						</div>
-						<div class="form-group">
-							<input class="form-control" type="password" id="password2" name="password2" placeholder="Confirm Password">
-						</div>
-						<div id="pass-info" class="clearfix"></div>
 					</div>
 					<!-- /step-->
 					<div class="step">
@@ -164,7 +94,7 @@
 									<img id="file-ip-1-preview">
 								</div>
 								<label for="file-ip-1">Upload Image</label>
-								<input type="file" id="file-ip-1" name="foto" accept="image/*" onchange="showPreview(event); ">
+								<input type="file" id="file-ip-1" name="file-ip-1" accept="image/*" onchange="showPreview(event); ">
 
 							</div>
 						</div>
@@ -178,11 +108,7 @@
 								<li><strong>1</strong>
 									<h5>Data diri</h5>
 									<ul>
-										<li><label>Nama lengkap</label>: <span id="nama_lengkap"></span></li>
-										<li><label>Tanggal lahir</label>: <span id="tanggal_lahir"></span></li>
 										<li><label>Kecamatan</label>: <span id="kecamatan"></span></li>
-										<li><label>Nama lengkap</label>: <span id="nama_lengkap"></span></li>
-										<li><label>RT/RW</label>: <span id="rtrw1"></span></li>
 										<li><label>Kelurahan</label>: <span id="kelurahan"></span></li>
 										<li><label>lokasi</label>: <span id="lokasi"></span></li>
 									</ul>
@@ -211,7 +137,7 @@
 				<div id="bottom-wizard">
 					<button type="button" name="backward" class="backward">Prev</button>
 					<button type="button" name="forward" class="forward">Next</button>
-					<button type="submit" name="simpan" class="submit">Submit</button>
+					<button type="submit" name="process" class="submit">Submit</button>
 				</div>
 				<!-- /bottom-wizard -->
 			</form>
@@ -235,7 +161,6 @@
 			}
 		}
 	</script>
-
 	<div class="cd-overlay-nav">
 		<span></span>
 	</div>
@@ -282,7 +207,6 @@
 	<script src="<?= base_url('assets1/') ?>js/registration_func.js"></script>
 
 </body>
-
 
 
 </html>

@@ -2,12 +2,8 @@
 	jQuery(function ($) {
 		"use strict";
 		// Chose here which method to send the email, available:
-		// Simple phpmail text/plain > registration.php (default)
-		// Phpmaimer text/html > phpmailer/registration_phpmailer.php
-		// Phpmaimer text/html SMPT > phpmailer/registration_phpmailer_smpt.php
-		// PHPmailer with html template > phpmailer/registration_phpmailer_template.php
-		// PHPmailer with html template SMTP> phpmailer/registration_phpmailer_template_smtp.php
-		$('form#wrapped').attr('action', 'registration.php');
+		
+		$('form#wrapped').attr('action', 'cek_data');
 		$("#wizard_container").wizard({
 			stepsWrapper: "#wrapped",
 			submit: ".submit",
@@ -91,16 +87,50 @@
 				$("#demo").text(value);
 				break;
 
-			case 'country':
+			case 'nama_lengkap':
 				// Get the value for a select
 				var value = $(formControl).val();
-				$("#country").text(value);
+				$("#nama_lengkap").text(value);
 				break;
+			case 'tanggal_lahir':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#tanggal_lahir").text(value);
+				break;
+			case 'rtrw1':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#rtrw1").text(value);
+				break;
+			
+			case 'kecamatan':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#kecamatan").text(value);
+				break;
+			
+			case 'kelurahan':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#kelurahan").text(value);
+				break;
+			
+			case 'long':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#long").text(value);
+				break;
+			case 'lat':
+				// Get the value for a select
+				var value = $(formControl).val();
+				$("#lat").text(value);
+				break;
+			
 
-			case 'user_name':
+			case 'username':
 				// Get the value for a input text
 				var value = $(formControl).val();
-				$("#user_name").text(value);
+				$("#username").text(value);
 				break;
 
 			case 'password':
@@ -134,6 +164,11 @@
 				// Get the value for a input text
 				var value = $(formControl).val();
 				$("#isi_aduan").text(value);
+				break;
+			case 'file-ip-1':
+				// Get the value for a input text
+				var value = $(formControl).val();
+				$("#file-ip-1").text(value);
 				break;
 
 		}

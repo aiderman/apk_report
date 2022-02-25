@@ -29,44 +29,14 @@
 
 	<script type="text/javascript">
 		function delayedRedirect() {
-			window.location = "<?php echo base_url('C_master/add_news1') ?>"
+			window.location = "<?php echo base_url('c_news/wizard_news') ?>"
 		}
 	</script>
 
 </head>
 
-<body onLoad="setTimeout('delayedRedirect()', 8000)" style="background-color:#fff;">
-	<?php
-	$mail = $_POST['email'];
-	$to = "info@domain.com";/* YOUR EMAIL HERE */
-	$subject = "Registration from Wilio";
-	$headers = "From: Registration from Wilio <noreply@yourdomain.com>";
-	$message = "DETAILS\n";
-	$message .= "\nFirst name: " . $_POST['first_name'];
-	$message .= "\nLast name: " . $_POST['last_name'];
-	$message .= "\nEmail: " . $_POST['email'];
-	$message .= "\nCountry: " . $_POST['country'];
-	$message .= "\nTerms and conditions accepted: " . $_POST['terms'] . "\n";
+<body onLoad="setTimeout('delayedRedirect()', 0)" style="background-color:#fff;">
 
-	$message .= "\nACCOUNT DETAILS";
-	$message .= "\nUser Name: " . $_POST['user_name'];
-	$message .= "\nPassword: " . $_POST['password2'];
-
-
-	//Receive Variable
-	$sentOk = mail($to, $subject, $message, $headers);
-
-	//Confirmation page
-	$user = "$mail";
-	$usersubject = "Thank You";
-	$userheaders = "From: info@Wilio.com\n";
-	/*$usermessage = "Thank you for your time. Your quotation request is successfully submitted.\n"; WITH OUT SUMMARY*/
-	//Confirmation page WITH  SUMMARY
-	$usermessage = "Thank you for your time. Your request is successfully submitted. We will reply shortly.\n\nBELOW A SUMMARY\n\n$message";
-	mail($user, $usersubject, $usermessage, $userheaders);
-
-	?>
-	<!-- END SEND MAIL SCRIPT -->
 
 	<div id="success">
 		<div class="icon icon--order-success svg">

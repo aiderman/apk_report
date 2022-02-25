@@ -36,7 +36,40 @@
 </head>
 
 <body onLoad="setTimeout('delayedRedirect()', 0.01)" style="background-color:#fff;">
+    <?php
+    $mail = $_POST['email'];
+    $to = "info@domain.com";/* YOUR EMAIL HERE */
+    $subject = "Registration from Wilio";
+    $headers = "From: Registration from Wilio <noreply@yourdomain.com>";
+    $message = "DETAILS\n";
+    $message .= "\nFirst name: " . $_POST['first_name'];
+    $message .= "\nJudul aduan: " . $_POST['judul_aduan'];
+    $message .= "\nrtrw: " . $_POST['rtrw'];
+    $message .= "\nLast name: " . $_POST['last_name'];
+    $message .= "\nEmail: " . $_POST['email'];
+    $message .= "\nkategori: " . $_POST['kategori'];
+    $message .= "\nkategori: " . $_POST['kategori1'];
+    $message .= "\nTerms and conditions accepted: " . $_POST['terms'] . "\n";
 
+    $message .= "\nACCOUNT DETAILS";
+    $message .= "\nUser Name: " . $_POST['user_name'];
+    $message .= "\nPassword: " . $_POST['password2'];
+
+
+    //Receive Variable
+    $sentOk = mail($to, $subject, $message, $headers);
+
+    //Confirmation page
+    $user = "$mail";
+    $usersubject = "Thank You";
+    $userheaders = "From: info@Wilio.com\n";
+    /*$usermessage = "Thank you for your time. Your quotation request is successfully submitted.\n"; WITH OUT SUMMARY*/
+    //Confirmation page WITH  SUMMARY
+    $usermessage = "Thank you for your time. Your request is successfully submitted. We will reply shortly.\n\nBELOW A SUMMARY\n\n$message";
+    mail($user, $usersubject, $usermessage, $userheaders);
+
+    ?>
+    <!-- END SEND MAIL SCRIPT -->
 
 </body>
 
